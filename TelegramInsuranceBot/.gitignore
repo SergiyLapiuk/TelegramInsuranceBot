@@ -1,0 +1,27 @@
+# .env — секрети
+.env
+
+# Кеші та залежності
+bin/
+obj/
+*.user
+*.suo
+
+# IDE файли
+.vscode/
+.idea/
+
+# Налаштування Visual Studio
+*.userprefs
+*.userosscache
+*.sln.docstates
+
+# Конфігурації запуску
+Properties/launchSettings.json
+
+# Лог файли
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
