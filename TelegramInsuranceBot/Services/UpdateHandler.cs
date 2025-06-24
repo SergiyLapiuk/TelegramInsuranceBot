@@ -38,6 +38,8 @@ public class UpdateHandler(
         if (msg.Text == "/start")
         {
             history.Clear();
+            passportData.Remove(chatId);
+            carDocData.Remove(chatId);
             history.Add(new SystemChatMessage("""
                 Ти — віртуальний агент, який допомагає користувачеві купити автострахування.
                 Слідуй чітким етапам, кожен етап це окреме повідомлення твоє:
