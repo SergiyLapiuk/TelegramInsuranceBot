@@ -10,9 +10,14 @@ var builder = WebApplication.CreateBuilder(args);
 var botConfig = BotConfiguration.LoadFromEnv();
 builder.Services.AddSingleton(botConfig);
 
-builder.Services.AddHttpClient("tgwebhook")
-    .AddTypedClient<ITelegramBotClient>(httpClient =>
-        new TelegramBotClient(botConfig.BotToken, httpClient));
+//builder.Services.AddHttpClient("tgwebhook")
+//    .AddTypedClient<ITelegramBotClient>(httpClient =>
+//        new TelegramBotClient(botConfig.BotToken, httpClient));
+
+builder.Services.AddSingleton<ITelegramBotClient>(
+    _ => new TelegramBotClient(botConfig.BotToken)
+);
+
 
 builder.Services.AddSingleton<MindeeService>();
 
